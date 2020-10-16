@@ -1,17 +1,40 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Global variables for function
+// Split function automatically puts them into an array.
 var possibleCharacters = [];
 var specialCharacters = "!@#$%^&*()?><+-".split("");
 var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
 var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var numbers = "1234567890".split("");
 
-console.log(specialCharacters);
-console.log(lowerCaseCharacters);
-console.log(upperCaseCharacters);
-console.log(numbers);
+// console.log(specialCharacters);
+// console.log(lowerCaseCharacters);
+// console.log(upperCaseCharacters);
+// console.log(numbers);
 
+var hasSpecialCharacters = true;
+var hasLowerCaseLetters = true;
+var hasUpperCaseLetters = true;
+var hasNumbers = true;
+
+
+function generatePassword () {
+var passwordLength = parseInt(prompt("How many characters would you like your password to be?  Must be a number between 8 and 128."));
+
+if (passwordLength<=7 || passwordLength>=129 || isNaN(passwordLength)) {
+  alert ("Please pick a valid number between 8 and 128");
+  passwordLength;
+
+} else {
+  // rest of promts
+}
+
+console.log(passwordLength);
+
+
+}
 
 // Generate password:
 // prompt user for Password length
