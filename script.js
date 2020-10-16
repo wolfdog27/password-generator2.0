@@ -4,24 +4,16 @@ var generateBtn = document.querySelector("#generate");
 // Global variables for function
 // Split function automatically puts them into an array.
 var specialCharacters = "!@#$%^&*()?><+-".split("");
-var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
-var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var numbers = "1234567890".split("");
 
 var possibleCharacters = [];
 
-// console.log(specialCharacters);
-// console.log(lowerCaseCharacters);
-// console.log(upperCaseCharacters);
-// console.log(numbers);
-
-var hasSpecialCharacters;
-var hasLowerCaseLetters;
-var hasUpperCaseLetters;
-var hasNumbers;
 
 // main function
 function generatePassword() {
+
 
   // Prompt user for desired characters and convert string into a number
   var passwordLength = parseInt(prompt("How many characters would you like your password to be?  Must be a number between 8 and 128."));
@@ -31,12 +23,33 @@ function generatePassword() {
     var passwordLength = parseInt(prompt("How many characters would you like your password to be?  Must be a number between 8 and 128."));
   }
 
+  // confirm special characters
   var hasSpecialCharacters = confirm("Would you like to use Special Characters in your password?");
   if (hasSpecialCharacters) {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
     console.log(possibleCharacters);
   }
-  
+
+  // confirm lower case letters
+  var hasLowerCaseLetters = confirm("Would you like to use Lower Case Letters in your password?");
+  if (hasLowerCaseLetters) {
+    possibleCharacters = possibleCharacters.concat(lowerCaseLetters);
+    console.log(possibleCharacters);
+  }
+
+  // confirm upper case letters
+  var hasUpperCaseLetters = confirm("Would you like to use Upper Case Letters in your password?");
+  if (hasUpperCaseLetters) {
+    possibleCharacters = possibleCharacters.concat(upperCaseLetters);
+    console.log(possibleCharacters);
+  }
+
+  // confirm lower case letters
+  var hasNumbers = confirm("Would you like to use numbers in your password?");
+  if (hasNumbers) {
+    possibleCharacters = possibleCharacters.concat(numbers);
+    console.log(possibleCharacters);
+  }
 
 
   // let hasSpecialCharacters = confirm("Would you like your password to include Special Characters?");
